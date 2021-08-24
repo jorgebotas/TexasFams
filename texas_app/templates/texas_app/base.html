@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>NMGFam</title>
+        <link rel="preconnect" href="https://fonts.gstatic.gmgc/com/" crossorigin>
+        <meta name="msapplication-TileColor" content="#206bc4" />
+        <meta name="theme-color" content="#206bc4" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+        <!-- CSS files -->
+        <link href="https://fonts.googleapis.com/css2?family=Ranga:wght@700&family=Roboto+Condensed&display=swap" 
+              rel="stylesheet">
+        <script src="https://kit.fontawesome.com/4072499970.js" crossorigin="anonymous"></script>
+        <link href="{% static 'texas_app/assets/tabler/css/tabler.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'texas_app/assets/tabler/libs/selectize/dist/css/selectize.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" 
+        href="{% static "texas_app/assets/tabler/css/tabler-vendors.min.css" %}"/>
+        <link href="{% static 'texas_app/css/theme.css' %}" rel="stylesheet" />
+
+        {% block styles %}
+        {% endblock %}
+
+        <style type="text/css" media="screen">
+            body { display: none; }
+        </style>
+
+    </head>
+    <body class="antialiased">
+        <div class="page">
+                <div class="content p-0">
+                        <div class="container-fluid p-0" id="NovelFams">
+                            {% include 'texas_app/navbar.html' %}
+                                {% block content %}
+                                {% endblock %}
+                        </div>
+                        {% include "texas_app/spinner.html"%}
+                        {% include "texas_app/alert.html"%}
+                        {% include "texas_app/footer.html" %}
+                </div>
+        </div>
+        <!-- Libs JS -->
+        <script src="{% static "texas_app/assets/jquery/jquery.min.js" %}"></script>
+        <script src="{% static 'texas_app/assets/tabler/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'texas_app/assets/tabler/js/tabler.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+        <script src="{% static "texas_app/assets/vue/vue.min.js" %}"></script>
+        <script src = "https://d3js.org/d3.v6.min.js"></script>
+        <script src="{% static 'texas_app/assets/tabler/libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+
+        {% block scripts %}
+        {% endblock %}
+        <script charset="utf-8">
+            window.onload = () => {
+                document.body.style.display = "block";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+* {
+    outline: none;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+div.page {
+    /*background: #eceef9;*/
+}
+
+a {
+    color: var(--indigo);
+}
+
+a:hover {
+    color: var(--dark-indigo);
+    text-decoration: none;
+}
+
+a.nav-link {
+    color: var(--indigo);
+}
+
+a.nav-link:hover {
+    color: var(--indigo);
+}
+
+a.nav-link.active {
+    background-color: var(--indigo) !important;
+}
+
+.form-help:hover, .form-help[aria-describedby] {
+    background: var(--indigo);
+}
+
+.progress-bar {
+    background: var(--indigo);
+}
+
+.btn-primary {
+    background: var(--indigo) !important;
+    border-color: var(--indigo) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background: var(--dark-indigo) !important;
+    border-color: var(--dark-indigo) !important;
+}
+
+.form-check-input {
+    margin-top: 1px;
+}
+
+.form-check-input:checked {
+    background-color: var(--indigo);
+}
+
+.form-help {
+    background: var(--white);
+}
+
+.selectize-dropdown {
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.selectize-input {
+    background: var(--white) !important;
+    border-radius: 5px !important;
+}
+
+.selectize-dropdown [data-selectable].option {
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 15px;
+}

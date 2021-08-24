@@ -1,0 +1,52 @@
+<div class="container my-5">
+<div class="row g-2">
+    <form action="./" method="get" accept-charset="utf-8" class="form
+        form-inline row">
+    <div class="form-group">
+    <div class="w-50 m-1">
+        <input type="text" 
+               class="form-control text-left"
+               id="search-fams"
+               @keypress.enter.prevent="searchFams()"
+               placeholder="Search family"/>
+        <span class="input-icon-addon">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+    </div>
+
+    <div class="w-25 m-1">
+        <select name="search-fams-type" id="search-fams-type"
+            class="form-select-selectized">
+            <option value="gmgc" selected>gmgc id</option>
+            <option value="novelfam">novelfam id</option>
+            <option value="function">function</option>
+        </select>
+    </div>
+
+    <div class="col-auto align-self-center">
+        <span class="form-help" 
+              data-toggle="popover"
+              data-placement="bottom"
+              title="Novel family browser help"
+              data-content="<p>Identifier mode: 
+                             <ul class=''pl-4'>
+                                <li>Enter a GMGC family identifier
+                                  <em class='text-muted'>E.g. 095_560_840</em>
+                                </li>
+                                <li>Enter a novel family identifier
+                                  <em class='text-muted'>E.g. 5</em>
+                                </li>
+                             </ul>                          
+                            </p>
+                          <p>Function mode: enter function to see related novel
+                          families</p>"
+              data-html="true"
+              data-original-title>?</span>
+    </div>
+
+    </div>
+    </form>
+    
+</div>
+    
+</div>
