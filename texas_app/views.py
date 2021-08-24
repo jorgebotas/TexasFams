@@ -1,5 +1,4 @@
 from django.shortcuts import render
 
-
 def context(request):
-    return render(request, 'nmgfams_app/context.html', {})
+    return render(request, 'texas_app/context.html', {})
