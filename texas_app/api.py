@@ -3,8 +3,6 @@ from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from json import dump
 from pickle import load as load_pickle
 
-from .src.mongodb import mongo_connect
-from .src.get_context import get_context, get_newick
 from .src.query_fam import fams_by_taxa,\
                            fams_by_neigh_annotation,\
                            get_fams,\

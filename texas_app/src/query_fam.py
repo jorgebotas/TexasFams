@@ -24,7 +24,7 @@ col_tm = db.tm
 
 DOCS_PER_PAGE = 10
 
-STATIC_PATH = settings.BASE_DIR + '/static/texas_app/'
+STATIC_PATH = settings.BASE_DIR / 'static/texas_app'
 
 def get_pickle(filePath):
     """
@@ -37,10 +37,10 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
-kegg_dict = get_pickle(STATIC_PATH + "pickle/KEGG_DESCRIPTION.pickle")
+kegg_dict = get_pickle(str(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle"))
 # OG level dictionary (for neighborhood summary)
 # TODO: include level in col_og_neigh_scores
-og_level_dict = get_pickle(STATIC_PATH + "pickle/e5_og_levels.pickle")
+og_level_dict = get_pickle(str(STATIC_PATH / "pickle/e5_og_levels.pickle"))
 
 def get_sequence(query, fasta=True):
     seq = col_proteins.find_one({'n': query}).get('aa', 'Sequence not found')
