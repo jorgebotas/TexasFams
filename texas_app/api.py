@@ -13,7 +13,7 @@ from .src.query_fam import fams_by_taxa,\
                            get_newick,\
                            get_neighborhood
 
-EXAMPLES_PATH = settings.BASE_DIR + "/texas_app/examples"
+EXAMPLES_PATH = str(settings.BASE_DIR / "texas_app/examples")
 
 def info(request, query):
     fam, total_matches = get_fams([query])
