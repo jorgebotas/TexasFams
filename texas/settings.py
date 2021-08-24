@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # Secret key (hidden)
-with open(BASE_DIR / '.env/secretKey.txt') as f:
+with open(str(BASE_DIR / '.env/secretKey.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -120,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_DIR = BASE_DIR / 'static'
 STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
