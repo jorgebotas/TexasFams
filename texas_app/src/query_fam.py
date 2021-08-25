@@ -444,18 +444,19 @@ def get_more_faminfo(fams):
             domains.append({
                 'gene': m,
                 'doms': get_domains(m_topo, m_sp),
-                'lenseq': get_prot_len(m.split('@')[2]) or 1000,
+                # 'lenseq': get_prot_len(m.split('@')[2]) or 1000,
             })
             # Taxonomy
-            genome =  m.split('@')[1]
+            # genome =  m.split('@')[1]
         ext_fam['domains'] = domains
-        unique_genomes = list(set(m.split('@')[1] for m in fam['members']))
-        taxonomy = [get_taxonomy(g, json=False)
-                    for g in unique_genomes]
-        tax_counter = Counter(taxonomy)
-        taxonomy = list(zip(tax_counter.keys(),
-                            tax_counter.values()))
-        ext_fam['taxonomy'] = taxonomy
+        # unique_genomes = list(set(m.split('@')[1] for m in fam['members']))
+        # taxonomy = [get_taxonomy(g, json=False)
+                    # for g in unique_genomes]
+        # tax_counter = Counter(taxonomy)
+        # taxonomy = list(zip(tax_counter.keys(),
+                            # tax_counter.values()))
+        # ext_fam['taxonomy'] = taxonomy
+        console.log(ext_fam)
         ext_fam['context_summary'] = get_neighborhood_summary(fname)
         extended_fams.append(ext_fam)
     return extended_fams
