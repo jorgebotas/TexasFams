@@ -456,7 +456,7 @@ def get_more_faminfo(fams):
         # taxonomy = list(zip(tax_counter.keys(),
                             # tax_counter.values()))
         # ext_fam['taxonomy'] = taxonomy
-        console.log(ext_fam)
+        print(ext_fam)
         ext_fam['context_summary'] = get_neighborhood_summary(fname)
         extended_fams.append(ext_fam)
     return extended_fams
