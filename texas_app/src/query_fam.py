@@ -363,10 +363,10 @@ def get_neighborhood(fam, members=None):
         members = members.get('members' ,[])
     neighborhood = []
     # process each member of the family
-    for gene_entry in members:
-        src, genome, gene, tax = gene_entry.split('@')
+    for gene in members:
+        # src, genome, gene, tax = gene_entry.split('@')
         # find taxa lineage by genome name
-        taxa = get_taxonomy(genome)
+        # taxa = get_taxonomy(genome)
         # First, give me neighbours and their positions/strands. The result includes the anchor
         window = 10
         mini_contig = get_mini_contig(gene, window=window)
@@ -383,7 +383,7 @@ def get_neighborhood(fam, members=None):
                         "end": orf['e'],
                         "strand": orf['o'],
                         "pos": orf['p'],
-                        "taxonomy": taxa,
+                        # "taxonomy": taxa,
                         "Orthologous groups": gene2annot[orf['g']].get('ogs', []),
                         "KEGG pathways": gene2annot[orf['g']].get('kpath', []),
                         "KEGG orthologues": gene2annot[orf['g']].get('kos', []),
@@ -392,7 +392,7 @@ def get_neighborhood(fam, members=None):
                         "Description": gene2annot[orf['g']].get('bod', ''),
                         #"emapper": gene2annot[orf['g']],
                         # "CARD": gene2card[orf['g']],
-                        "seqID": "@".join([src, genome, orf['g'], tax])
+                        # "seqID": "@".join([src, genome, orf['g'], tax])
                 }
             neighborhood.append(gene_doc)
     print(neighborhood)
