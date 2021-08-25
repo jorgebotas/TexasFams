@@ -301,7 +301,7 @@ def get_neighborhood_summary(fam):
     summary = { pos: {'anchor': fam, 'pos':pos, 'strand': {"+": 0}} 
                 for pos in range(-3, 4) }
     keys = {
-        "og": "Orthologous groups",
+        "ogs": "Orthologous groups",
         "kos": "KEGG orthologues",
         "kpath": "KEGG pathways",
         "Kmods": "KEGG modules",
