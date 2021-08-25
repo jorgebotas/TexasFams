@@ -560,8 +560,8 @@ var gmgc_vueapp = new Vue({
                     newick = await get_newick(query);
                     context = await get_context(query);
                     newickFields = [
-                        'last tax level',
-                        'full name',
+                        //'last tax level',
+                        //'full name',
                         'name',
                         'domain',
                         'phylum',
