@@ -444,11 +444,11 @@ def get_more_faminfo(fams):
             domains.append({
                 'gene': m,
                 'doms': get_domains(m_topo, m_sp),
-                # 'lenseq': get_prot_len(m.split('@')[2]) or 1000,
+                'lenseq': 1000, #get_prot_len(m.split('@')[2]) or 1000,
             })
             # Taxonomy
             # genome =  m.split('@')[1]
-        # ext_fam['domains'] = domains
+        ext_fam['domains'] = domains
         unique_genomes = list(set(fam['genomes']))
         taxonomy = [get_taxonomy(g, json=False)
                     for g in unique_genomes]
