@@ -322,7 +322,7 @@ def get_neighborhood_summary(fam):
                 strand = "+"
             info = {'id': term, 
                     'description': f'score: {score}'}
-            if k == 'og':
+            if k == 'ogs':
                 info['level'] = og_level_dict.get(term, '')
             gene = summary[pos]
             gene_strand_score = gene['strand'].get(strand, 0)
