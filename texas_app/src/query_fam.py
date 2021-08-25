@@ -276,6 +276,7 @@ def get_newick(fam):
     match = col_trees.find_one({'fam': fam}) or {}
     tree = match.get('tree', False)
     if not tree: return False
+    return tree
     tree = Tree(tree)
     print(tree)
     for leaf in tree.iter_leaves():
