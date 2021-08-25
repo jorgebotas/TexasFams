@@ -301,7 +301,7 @@ def get_neighborhood_summary(fam):
     summary = { pos: {'anchor': fam, 'pos':pos, 'strand': {"+": 0}} 
                 for pos in range(-3, 4) }
     keys = {
-        "OGS": "Orthologous groups",
+        "og": "Orthologous groups",
         "kos": "KEGG orthologues",
         "kpath": "KEGG pathways",
         "Kmods": "KEGG modules",
@@ -310,7 +310,6 @@ def get_neighborhood_summary(fam):
         "CARD": "CARD",
     }
     for k, v in neighs.items():
-        print(v)
         key = keys.get(k, k)
         for t in v:
             pos = t['pos']
@@ -355,6 +354,8 @@ def get_neighborhood_summary(fam):
                         f'Level: {level}. {og["description"]}'
         most_conserved_og['level'] = 'most conserved'
         s['Orthologous groups'].insert(0, most_conserved_og)
+
+    print(summary)
 
     return summary
 
