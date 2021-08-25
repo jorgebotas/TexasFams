@@ -395,6 +395,7 @@ def get_neighborhood(fam, members=None):
                         "seqID": "@".join([src, genome, orf['g'], tax])
                 }
             neighborhood.append(gene_doc)
+    print(neighborhood)
     return neighborhood
 
 def get_domains(topology, signalp=[]):
