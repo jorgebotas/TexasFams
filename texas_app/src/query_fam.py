@@ -278,7 +278,6 @@ def get_newick(fam):
     if not tree: return False
     return tree
     tree = Tree(tree)
-    print(tree)
     for leaf in tree.iter_leaves():
         lname = str(leaf.name).replace(' ', '_')
         src, genome, gene, tax = lname.split('@', 3)
@@ -355,8 +354,6 @@ def get_neighborhood_summary(fam):
         most_conserved_og['level'] = 'most conserved'
         s['Orthologous groups'].insert(0, most_conserved_og)
 
-    print(summary)
-
     return summary
 
 def get_neighborhood(fam, members=None):
@@ -397,7 +394,6 @@ def get_neighborhood(fam, members=None):
                         # "seqID": "@".join([src, genome, orf['g'], tax])
                 }
             neighborhood.append(gene_doc)
-    print(neighborhood)
     return neighborhood
 
 def get_domains(topology, signalp=[]):
