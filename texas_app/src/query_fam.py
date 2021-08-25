@@ -277,6 +277,7 @@ def get_newick(fam):
     tree = match.get('tree', False)
     if not tree: return False
     tree = Tree(tree)
+    print(tree)
     for leaf in tree.iter_leaves():
         lname = str(leaf.name).replace(' ', '_')
         src, genome, gene, tax = lname.split('@', 3)
