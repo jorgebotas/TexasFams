@@ -9,7 +9,7 @@ import sys
 import time
 
 client = MongoClient('10.0.3.1')
-db = client['mgv1']
+db = client['texas']
 col_emapper = db.emapper2
 col_neighs = db.neighs
 col_cards = db.card
