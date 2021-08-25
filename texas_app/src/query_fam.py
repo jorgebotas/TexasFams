@@ -13,7 +13,7 @@ db = client['texas']
 col_emapper = db.emapper2
 col_neighs = db.neighs
 col_cards = db.card
-col_fams = db.nfam_v2_members
+col_fams = db.fam2members
 col_faminfo = db.faminfo
 col_taxonomy = db.genome_taxonomy
 col_og_neigh_scores = db.og_neigh_scores
@@ -49,7 +49,7 @@ def get_sequence(query, fasta=True):
     return seq
 
 def get_sequences(query, fasta=True):
-    members = (col_fams.find_one({'gf': query}) or {}).get('members', [])
+    members = (col_fams.find_one({'fam': query}) or {}).get('members', [])
     seqs = col_proteins.find({'n': { '$in': members }})
     multifasta = ""
     for s in seqs:
@@ -359,7 +359,7 @@ def get_neighborhood_summary(fam):
 
 def get_neighborhood(fam, members=None):
     if not members:
-        members = col_fams.find_one({'gf': fam}) or {}
+        members = col_fams.find_one({'fam': fam}) or {}
         members = members.get('members' ,[])
     neighborhood = []
     # process each member of the family
